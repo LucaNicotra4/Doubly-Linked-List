@@ -1,3 +1,8 @@
+/**
+ * Doubly Linked List with both prev and next pointers,
+ * supporting String values
+ * @author Luca Nicotra
+ */
 public class DoublyLinkedList {
      private Node root;
      private Node end;
@@ -6,6 +11,11 @@ public class DoublyLinkedList {
 
      }
 
+     /**
+      * Removes a Node from a specific Index
+      * @param index
+      * @return String removed or ""
+      */
      public String removeNodeAt(int index){
           Node temp = root;
           if(root == null) return "";
@@ -39,6 +49,10 @@ public class DoublyLinkedList {
           }
      }
 
+     /**
+      * Alphabetically adds a new Node to the list
+      * @param data
+      */
      public void add(String data){
           Node temp = root;
           if(root == null){ //Empty list
@@ -69,6 +83,11 @@ public class DoublyLinkedList {
           }
      }
 
+     /**
+      * Removes a Node with the given value
+      * @param data
+      * @return T/F if object was found and removed or not
+      */
      public boolean remove(String data){
           Node temp = root;
           if(root == null) return false; //if list is empty
@@ -92,6 +111,11 @@ public class DoublyLinkedList {
           return false;
      }
 
+     /**
+      * Returns the index of the inputed value
+      * @param string
+      * @return int index of given value
+      */
      public int indexOf(String string){
           if(root == null) return Integer.MIN_VALUE;
           if(root.next == null) return Integer.MIN_VALUE;
@@ -106,6 +130,10 @@ public class DoublyLinkedList {
           return Integer.MIN_VALUE;
      }
 
+     /**
+      * Returns size of list (num Nodes)
+      * @return int size
+      */
      public int size(){
           Node temp = root;
           int count = 1;
@@ -117,6 +145,9 @@ public class DoublyLinkedList {
           return count;
      }
 
+     /**
+      * Changes each element of list to uppercase
+      */
      public void toUpperCaseList(){
           Node temp = root;
           if(temp == null) return;
@@ -127,6 +158,9 @@ public class DoublyLinkedList {
           temp.val = temp.val.toUpperCase();
      }
 
+     /**
+      * Changes each element of list to lowercase
+      */
      public void toLowerCaseList(){
           Node temp = root;
           if(temp == null) return;
@@ -137,6 +171,10 @@ public class DoublyLinkedList {
           temp.val = temp.val.toLowerCase();
      }
 
+     /**
+      * Prints out value of each Node
+      * @return String
+      */
      public String toString(){
           Node temp = root;
           if(root == null){//Length 0
@@ -154,6 +192,10 @@ public class DoublyLinkedList {
           }
      }
 
+     /**
+      * Prints of list of elements in reverse order
+      * @return String
+      */
      public String toStringReverse(){
           Node temp = end;
           String str = "[";
